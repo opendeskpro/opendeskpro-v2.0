@@ -7,10 +7,16 @@ import { PricingTable } from '../components/PricingTable';
 
 // TODO: Update with your actual GitHub repository URL
 const GITHUB_URL = 'https://github.com/yourusername/merndesk';
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in';
 
 export const Landing = () => {
   const navigate = useNavigate();
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
+  const handleBuyPro = () => {
+    window.open(LICENSE_PURCHASE_URL, '_blank');
+  };
 
   const handleDownloadCore = () => {
     window.open(GITHUB_URL, '_blank');
@@ -48,7 +54,7 @@ export const Landing = () => {
                 Login
               </button>
               <button
-                onClick={() => setIsPaymentModalOpen(true)}
+                onClick={handleBuyPro}
                 className="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg transition-colors"
               >
                 Buy Pro
@@ -114,7 +120,7 @@ export const Landing = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setIsPaymentModalOpen(true)}
+                onClick={handleBuyPro}
                 className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-200 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/40"
               >
                 Buy Pro License

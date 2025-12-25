@@ -10,6 +10,9 @@ import { useFeatureAccess } from '../../hooks/useFeatureAccess'
 import toast from 'react-hot-toast'
 import { Check, X, Lock, Zap } from 'lucide-react'
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in'
+
 export const UpgradePlan = () => {
   const navigate = useNavigate()
   const { user } = useAuth()
@@ -22,6 +25,10 @@ export const UpgradePlan = () => {
 
   // Pro plan pricing (in INR)
   const PRO_PRICE = 9999 // ₹9,999 per year
+
+  const handleBuyPro = () => {
+    window.open(LICENSE_PURCHASE_URL, '_blank')
+  }
 
   const handleScreenshotChange = (e) => {
     const file = e.target.files[0]
@@ -186,7 +193,7 @@ export const UpgradePlan = () => {
           </ul>
           <div className="text-center">
             <Button
-              onClick={() => setShowUpgradeModal(true)}
+              onClick={handleBuyPro}
               className="w-full"
               size="lg"
             >

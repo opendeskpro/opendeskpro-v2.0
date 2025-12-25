@@ -10,6 +10,9 @@ import { Shield, Plus, X, Lock } from 'lucide-react'
 import { adminAPI } from '../../services/api'
 import toast from 'react-hot-toast'
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in'
+
 export const DomainRules = () => {
   const { hasAccess } = useFeatureAccess()
   const navigate = useNavigate()
@@ -23,7 +26,7 @@ export const DomainRules = () => {
           <p className="text-gray-600 mb-6">
             Upgrade to Pro to enable domain whitelist and blacklist features for email filtering.
           </p>
-          <Button onClick={() => navigate('/upgrade')}>
+          <Button onClick={() => window.open(LICENSE_PURCHASE_URL, '_blank')}>
             Upgrade to Pro
           </Button>
         </Card>

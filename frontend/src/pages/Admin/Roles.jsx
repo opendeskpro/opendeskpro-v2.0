@@ -11,6 +11,9 @@ import { useFeatureAccess } from '../../hooks/useFeatureAccess'
 import { Plus, Edit, Trash2, Shield, Lock } from 'lucide-react'
 import toast from 'react-hot-toast'
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in'
+
 const mockRoles = [
   { id: 1, name: 'Admin', description: 'Full system access', permissions: ['all'], userCount: 2 },
   { id: 2, name: 'Technician', description: 'Can manage tickets and respond to users', permissions: ['tickets:read', 'tickets:write', 'comments:write'], userCount: 5 },
@@ -44,7 +47,7 @@ export const Roles = () => {
     // Check if creating custom role (not editing existing default role)
     if (!role && !hasAccess('CUSTOM_ROLES')) {
       toast.error('Custom Roles feature requires a Pro upgrade')
-      navigate('/upgrade')
+      window.open(LICENSE_PURCHASE_URL, '_blank')
       return
     }
     if (role) {

@@ -11,6 +11,9 @@ import { adminAPI } from '../../services/api'
 import { Shield, Lock } from 'lucide-react'
 import toast from 'react-hot-toast'
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in'
+
 export const SSOConfig = () => {
   const { ssoSettings, updateSSOSettings } = useSSO()
   const { hasAccess } = useFeatureAccess()
@@ -25,7 +28,7 @@ export const SSOConfig = () => {
           <p className="text-gray-600 mb-6">
             Upgrade to Pro to enable Single Sign-On (SSO) integration with Azure AD, Google Workspace, and SAML.
           </p>
-          <Button onClick={() => navigate('/upgrade')}>
+          <Button onClick={() => window.open(LICENSE_PURCHASE_URL, '_blank')}>
             Upgrade to Pro
           </Button>
         </Card>

@@ -42,6 +42,9 @@ import { Input } from '../ui/Input'
 import { Button } from '../ui/Button'
 import toast from 'react-hot-toast'
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in'
+
 const getMenuItems = (userRole) => {
   const items = [
     { path: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -438,7 +441,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
             <Button
               onClick={() => {
                 setShowUpgradeModal(false)
-                navigate('/upgrade')
+                window.open(LICENSE_PURCHASE_URL, '_blank')
               }}
             >
               Upgrade to Pro

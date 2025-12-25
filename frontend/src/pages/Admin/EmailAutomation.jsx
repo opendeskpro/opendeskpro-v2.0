@@ -19,6 +19,9 @@ import toast from 'react-hot-toast'
 import { Mail, Plus, Play, Edit, Trash2, CheckCircle, XCircle, Clock, Lock } from 'lucide-react'
 import { format } from 'date-fns'
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in'
+
 export const EmailAutomation = () => {
   const { user } = useAuth()
   const { hasAccess } = useFeatureAccess()
@@ -33,7 +36,7 @@ export const EmailAutomation = () => {
           <p className="text-gray-600 mb-6">
             Upgrade to Pro to enable automated email workflows and scheduled email reports.
           </p>
-          <Button onClick={() => navigate('/upgrade')}>
+          <Button onClick={() => window.open(LICENSE_PURCHASE_URL, '_blank')}>
             Upgrade to Pro
           </Button>
         </Card>

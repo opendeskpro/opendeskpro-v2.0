@@ -2,12 +2,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+// License purchase URL
+const LICENSE_PURCHASE_URL = 'https://kloudinfotech.in';
+
 export const PaymentModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
 
   const handleBuyPro = () => {
     onClose();
-    navigate('/activate');
+    window.open(LICENSE_PURCHASE_URL, '_blank');
   };
 
   return (
